@@ -1,0 +1,18 @@
+---
+import { MarkdownInstance } from "astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { PostLayout } from "../utils/markdowntype";
+import BlogPost from "../components/BlogPost.astro";
+
+const allPosts: MarkdownInstance<PostLayout>[] = await Astro.glob('./posts/*.md');
+const pageTitle = "Blog Page";
+---
+<BaseLayout pageTitle={pageTitle}>
+    <p>All information about my daily activites are posted here..</p>
+    <ul>
+        {allPosts.map((post) => <BlogPost 
+                                url={post.url} 
+                                title={post.frontmatter.title} 
+        />)}
+    </ul>
+</BaseLayout>
