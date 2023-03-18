@@ -4,16 +4,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Home Page";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<BaseLayout pageTitle={pageTitle}>
-			<h2>My Awesome Blog Subtitle</h2>
-		</BaseLayout>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+	<h2>My Awesome Blog Subtitle</h2>
+</BaseLayout>
